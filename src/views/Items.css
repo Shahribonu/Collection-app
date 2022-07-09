@@ -1,0 +1,26 @@
+.items{
+    position: absolute;
+    top: 20%;
+    left: 25%;
+}
+
+.itemss{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.items .head{
+    display: flex;
+    align-items:center !important;
+    justify-content: space-between !important;
+    padding-bottom: 50px;
+}
+.head button{
+    padding: 6px 25px;
+    font-size: 17px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--main-color);
+    margin-right: 50px !important;
+}

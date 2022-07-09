@@ -1,0 +1,6 @@
+.app{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100vw !important;
+}
