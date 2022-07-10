@@ -10,9 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function MainLayout() {
   return (
     <div className="app">
-      <Sidebar />
       <Navbar />
-
       <div>
         <Routes>
           <Route path="/" element={<Collections />} />

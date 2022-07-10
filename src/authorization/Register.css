@@ -53,8 +53,8 @@ input{
   margin-top: 10px;
   cursor: pointer;
   font-size: 15px;
-  background: #01d28e;
-  border: 1px solid #01d28e;
+  background: var(--main-color);
+  border: 1px solid var(--main-color);
   color: #fff;
   padding: 10px 20px;
 }

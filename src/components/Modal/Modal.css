@@ -1,16 +1,22 @@
 .modal{
     position: absolute;
-    top: 10%;
+    top: 0%;
     left: 50%;
-    transform: translate(-50%,-10%);
+    transform: translate(-50%,0%);
     background-color: rgb(255, 255, 255);
-    padding: 30px 20px;
-    border: 1px solid rgb(0, 0, 0);
     z-index: 1000;
+}
+.modal .close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  
 }
 .modal form {
     background-color: #fff;
     display: flex;
+    padding: 30px 25px !important;
     align-items: flex-start;
     padding: 0;
 }
@@ -22,4 +28,15 @@ margin-bottom: 20px;
 }
 .modal form label{
     padding-bottom: 5px;
+}
+.modal form input[type="file"]{
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
 }

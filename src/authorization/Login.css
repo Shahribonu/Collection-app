@@ -38,14 +38,14 @@ position: relative;
     margin-top: 10px;
     cursor: pointer;
     font-size: 15px;
-    background: #01d28e;
-    border: 1px solid #01d28e;
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
     color: #fff;
     padding: 10px 20px;
   }
   
   input[type="submit"]:hover {
-    background: #6cf0c2;
+    background: var(--main-color);
   }
   form h1{
     color: #000;

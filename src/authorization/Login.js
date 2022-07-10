@@ -30,13 +30,6 @@ function Login() {
     });
   };
 
-  useEffect(() => {
-    // getUser();
-    // getToken();
-  }, []);
-
-  // console.log(apiUsers);
-
   const errors = {
     uname: "invalid username",
     pass: "invalid password",
@@ -45,14 +38,11 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // var { identifier, password } = document.forms[0];
-
     getToken({
       identifier: identifier,
       password: password,
     });
 
-    // console.log(identifier, password);
     const userData = apiUsers.find(
       (user) => user.identifier === identifier.value
     );
@@ -107,7 +97,11 @@ function Login() {
     </div>
   );
 
-  return <div>{isSubmitted ? <MainLayout /> : renderForm}</div>;
+  return (
+    <div>
+      {isSubmitted ? <MainLayout identifier={identifier} /> : renderForm}
+    </div>
+  );
 }
 
 export default Login;

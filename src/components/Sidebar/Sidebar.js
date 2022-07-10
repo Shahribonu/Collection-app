@@ -10,6 +10,7 @@ import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
 import SidebarOption from "./SidebarOption";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const Sidebar = () => {
   return (
@@ -18,12 +19,16 @@ export const Sidebar = () => {
       <BookmarkIcon className="sidebar__icon" />
 
       {/* Sidebar option */}
-      <SidebarOption active Icon={HomeIcon} text="Home" />
-      <SidebarOption Icon={SearchIcon} text="Explore" />
-      <SidebarOption Icon={CollectionsIcon} text="Collections" />
-      <SidebarOption Icon={LocalOfferIcon} text="Tags" />
-      <SidebarOption Icon={PlaylistAddCheckCircleIcon} text="Album" />
-      <SidebarOption Icon={MoreHorizIcon} text="More" />
+      <Link to="/">
+        <SidebarOption active Icon={HomeIcon} text="Home" />
+      </Link>
+
+      <Link to="/auth/register">
+        <SidebarOption Icon={PlaylistAddCheckCircleIcon} text="Register" />
+      </Link>
+      <Link to="/auth/login">
+        <SidebarOption Icon={LocalOfferIcon} text="Login" />
+      </Link>
 
       {/* button */}
       <Button className="return" fullWidth>

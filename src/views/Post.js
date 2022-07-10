@@ -9,15 +9,16 @@ export const Post = (ownPost) => {
   // console.log(ownPost.ownPost.attributes.image);
   return (
     <div className="post">
-      <div className="post__avatar">
-        <Avatar src={`https://picsum.photos/200/300?random=`} />
-      </div>
-      <div className="post__body">
-        <div className="post__header">
-          <div className="post__headerText">
-            <h3>{ownPost.ownPost.attributes.title} </h3>
-          </div>
+      <div className="post__header">
+        <div className="post__avatar">
+          <Avatar src={`https://picsum.photos/200/300?random=`} />
         </div>
+        <div className="post__headerText">
+          <h3>{ownPost.ownPost.attributes.title} </h3>
+        </div>
+      </div>
+
+      <div className="post__body">
         <img
           src={`https://collection-sh.herokuapp.com${ownPost.ownPost.attributes.image}`}
           alt="image"

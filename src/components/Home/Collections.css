@@ -1,20 +1,17 @@
 .collections{
+  width: 100%;
   padding: 10px 25px;
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  
+  position: relative;
 
 }
 .collections h1{
     display: flex;
-  /* align-items: center; */
   justify-content: center;
-  margin: 20px 0 40px;
+  margin: 0 0 40px;
   font-size: 25px;
 }
 .all-collections{
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2rem;
 }

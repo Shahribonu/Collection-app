@@ -1,14 +1,13 @@
 .oneCollection{
     display: flex;
+    position: relative;
     align-items:center;
     justify-content: center;
     flex-direction: column;
     cursor: pointer;
     color: #000;
+    width: 130px;
     text-decoration: none !important;
-    /* position: absolute;
-    top: 20%;
-    left: 25%; */
 }
 
 h2{

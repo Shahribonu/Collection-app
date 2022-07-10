@@ -27,7 +27,6 @@ export const Items = () => {
   return (
     <div className="items">
       <div className="head">
-        <h1>Personal Page</h1>
         <div className="addItem">
           <button onClick={() => setModal(true)}>Add Item</button>
         </div>

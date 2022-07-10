@@ -6,7 +6,10 @@ import Collections from "../Home/Collections";
 const Errors = () => {
   return (
     <div className="error-page">
-      <h1>Error page</h1>
+      <h1>Error page...</h1>
+      <Link to="/">
+        <p className="back">Back Home</p>{" "}
+      </Link>
     </div>
   );
 };

@@ -11,17 +11,18 @@ export const Navbar = () => {
     await localStorage.removeItem("jwt");
     navigate("/auth/login");
   };
-  // const [users, setUsers] = useState([]);
 
   return (
     <div className="navbar">
-      <h1>
-        Welcome <span>Shahribonu</span>{" "}
-      </h1>
+      <h1>Welcome</h1>
       <div className="right">
         <div className="navbar__search">
-          <SearchIcon className="navbar__searchIcon" />
-          <input type="text" placeholder="Search Collections.." />
+          {/* <SearchIcon className="navbar__searchIcon" /> */}
+          <input
+            type="text"
+            id="navbar__input"
+            placeholder="Search Collections..."
+          />
           {/* <Search details={users} /> */}
         </div>
         <button onClick={logOut}>Log out</button>

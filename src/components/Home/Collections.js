@@ -6,7 +6,6 @@ import OneCollection from "./OneCollection";
 const Collections = () => {
   const [users, setUsers] = useState(null);
   const id = Math.round(Math.random() * 10);
-  // console.log(id);
 
   const getUsers = () => {
     axios

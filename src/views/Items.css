@@ -1,20 +1,18 @@
 .items{
     position: absolute;
     top: 20%;
-    left: 25%;
+    left: 55%;
+    transform: translate(-55%, 0%);
+    width: 100%;
 }
 
 .itemss{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center !important;
     gap: 3rem;
 }
-.items .head{
-    display: flex;
-    align-items:center !important;
-    justify-content: space-between !important;
-    padding-bottom: 50px;
-}
+
 .head button{
     padding: 6px 25px;
     font-size: 17px;
@@ -23,4 +21,10 @@
     cursor: pointer;
     background-color: var(--main-color);
     margin-right: 50px !important;
+}
+.addItem{
+    position: fixed !important;
+    right: 0;
+    top: 0;
+
 }
