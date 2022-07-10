@@ -5,7 +5,6 @@
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    /* width: 100%; */
   
 
 }
@@ -15,8 +14,11 @@
 position: relative;
 margin: 10px;
 
+
 }
 .all .box img{
     width: 100%;
     height: 100%;
+    cursor: pointer;
+
 }

@@ -1,5 +1,4 @@
 import "../App.css";
-import { Sidebar } from "../components/Sidebar/Sidebar";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Items } from "../views/Item";
 import Collections from "../components/Home/Collections";
@@ -14,7 +13,7 @@ function MainLayout() {
       <Navbar />
       <div>
         <Routes>
-          <Route path="/" element={<Collections />} />
+          <Route path="/collection" element={<Collections />} />
           <Route path="*" element={<Errors />} />
           <Route path="/items/:id" element={<Items />} />
         </Routes>

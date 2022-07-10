@@ -26,7 +26,7 @@ function Login() {
     }).then((res) => {
       const jwt = res.data.jwt;
       localStorage.setItem("jwt", jwt);
-      navigate("/");
+      navigate("/collection");
     });
   };
 

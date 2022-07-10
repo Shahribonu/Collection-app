@@ -35,16 +35,16 @@ export default function Register() {
 
   const postUser = () => {
     axios({
-      method: "post",
+      method: "POST",
       url: "https://collection-sh.herokuapp.com/api/auth/local/register",
       data: {
         username: `${name}`,
         password: `${password}`,
       },
-      headers: {
-        Authorization: `
-        Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MzMxNTc5LCJleHAiOjE2NTg5MjM1Nzl9.FCbFRPzqLGZMuPsqpqrdlI0B8sAGEgFboWdvPc7a7H8`,
-      },
+      // headers: {
+      //   Authorization: `
+      //   Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MzMxNTc5LCJleHAiOjE2NTg5MjM1Nzl9.FCbFRPzqLGZMuPsqpqrdlI0B8sAGEgFboWdvPc7a7H8`,
+      // },
     }).then((res) => console.log(res.status));
   };
 

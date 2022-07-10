@@ -15,13 +15,13 @@ const All = () => {
     getOwnPosts();
   }, []);
 
-  console.log(ownPosts);
+  // console.log(ownPosts[0].attributes.image.parenElement);
 
   return (
     <div className="all">
       {ownPosts.map((post) => {
         return (
-          <div className="box">
+          <div className="box" key={post.id}>
             <img
               src={`https://collection-sh.herokuapp.com${post.attributes.image}`}
               alt="image"

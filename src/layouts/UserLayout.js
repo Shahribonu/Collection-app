@@ -1,5 +1,4 @@
 import React from "react";
-import { Sidebar } from "../components/Sidebar/Sidebar";
 import Login from "../authorization/Login";
 import Register from "../authorization/Register";
 import Errors from "../components/404/Error";
@@ -13,8 +12,6 @@ import {
 const UserLayout = () => {
   return (
     <div>
-      {/* <h1>User Layout</h1>   */}
-
       <Routes>
         <Route path="/auth/registr" element={<Register />} />
         <Route path="*" element={<Errors />} />
