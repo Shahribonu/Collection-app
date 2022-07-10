@@ -97,11 +97,7 @@ function Login() {
     </div>
   );
 
-  return (
-    <div>
-      {isSubmitted ? <MainLayout identifier={identifier} /> : renderForm}
-    </div>
-  );
+  return <div>{isSubmitted ? <MainLayout /> : renderForm}</div>;
 }
 
 export default Login;

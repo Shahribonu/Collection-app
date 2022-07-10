@@ -36,14 +36,15 @@ export default function Register() {
   const postUser = () => {
     axios({
       method: "post",
-      url: "https://collection-sh.herokuapp.com/api/auth/local",
+      url: "https://collection-sh.herokuapp.com/api/auth/local/register",
       data: {
         username: `${name}`,
         password: `${password}`,
       },
-      //   headers: {
-      //     Authorization: `Bearer ${response.data.jwt}`,
-      //   },
+      headers: {
+        Authorization: `
+        Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MzMxNTc5LCJleHAiOjE2NTg5MjM1Nzl9.FCbFRPzqLGZMuPsqpqrdlI0B8sAGEgFboWdvPc7a7H8`,
+      },
     }).then((res) => console.log(res.status));
   };
 
@@ -90,58 +91,63 @@ export default function Register() {
   };
 
   return (
-    <div className="form">
-      {/* Calling to the methods */}
-      <div className="messages">
-        {errorMessage()}
-        {successMessage()}
+    <div>
+      {/* <Form />
+      {submitted ? <MainLayout /> : <Form />} */}
+      <div className="form">
+        {/* Calling to the methods */}
+        <div className="messages">
+          {errorMessage()}
+          {successMessage()}
+        </div>
+
+        <form>
+          {/* Labels and inputs for form data */}
+
+          <div>
+            <h1>User Registration</h1>
+          </div>
+          <input
+            onChange={handleName}
+            className="input"
+            value={name}
+            type="text"
+            placeholder="Username"
+          />
+
+          {/* <label className="label">Email</label>   */}
+          <input
+            onChange={handleEmail}
+            className="input"
+            value={email}
+            type="email"
+            placeholder="email"
+          />
+
+          {/* <label className="label">Password</label> */}
+          <input
+            onChange={handlePassword}
+            className="input"
+            value={password}
+            type="password"
+            placeholder="password"
+          />
+
+          <button onClick={handleSubmit} className="btn" type="submit">
+            Register
+          </button>
+
+          <div className="addition">
+            <Link to="/auth/login">
+              <p>Sign In</p>
+            </Link>
+            <Link to="/">
+              <p>Move to App</p>
+            </Link>
+          </div>
+        </form>
       </div>
-
-      <form>
-        {/* Labels and inputs for form data */}
-
-        <div>
-          <h1>User Registration</h1>
-        </div>
-        <input
-          onChange={handleName}
-          className="input"
-          value={name}
-          type="text"
-          placeholder="Username"
-        />
-
-        {/* <label className="label">Email</label>   */}
-        <input
-          onChange={handleEmail}
-          className="input"
-          value={email}
-          type="email"
-          placeholder="email"
-        />
-
-        {/* <label className="label">Password</label> */}
-        <input
-          onChange={handlePassword}
-          className="input"
-          value={password}
-          type="password"
-          placeholder="password"
-        />
-
-        <button onClick={handleSubmit} className="btn" type="submit">
-          Register
-        </button>
-
-        <div className="addition">
-          <Link to="/auth/login">
-            <p>Sign In</p>
-          </Link>
-          <Link to="/">
-            <p>Move to App</p>
-          </Link>
-        </div>
-      </form>
+      ;
     </div>
   );
 }

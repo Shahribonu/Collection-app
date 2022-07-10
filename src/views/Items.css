@@ -19,7 +19,7 @@
     border: none;
     color: #fff;
     cursor: pointer;
-    background-color: var(--main-color);
+    background-color: rgb(46, 46, 248);
     margin-right: 50px !important;
 }
 .addItem{

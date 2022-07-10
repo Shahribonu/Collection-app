@@ -11,6 +11,7 @@ function MainLayout() {
   return (
     <div className="app">
       <Navbar />
+
       <div>
         <Routes>
           <Route path="/" element={<Collections />} />
