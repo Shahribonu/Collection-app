@@ -5,7 +5,6 @@ import Collections from "../components/Home/Collections";
 import Errors from "../components/404/Error";
 import "./MainLayout.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import All from "../views/All";
 
 function MainLayout() {
   return (

@@ -14,6 +14,7 @@ const All = () => {
     getOwnPosts();
   }, []);
 
+  // console.log(ownPosts[0])
   return (
     <div className="all">
       {ownPosts.map((post) => {

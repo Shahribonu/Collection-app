@@ -1,52 +1,40 @@
 import React, { useState } from "react";
 import "./Modal.css";
 import axios from "axios";
-import FileUploader from "./FileUploader";
+
 import CloseIcon from "@mui/icons-material/Close";
 
 const Modal = ({ modal, setModal }) => {
-  const [name, setName] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
-
-  const submitForm = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const formData = new FormData();
-    formData.append("name", name);
-    formData.append("file", selectedFile);
-
-    axios
-      .post("UPLOAD_URL", formData)
-      .then((res) => {
-        alert("File Upload success");
-      })
-      .catch((err) => alert("File Upload Error"));
+    formData.append("files", selectedFile);
+    try {
+      const response = axios({
+        method: "POST",
+        url: "https://collection-sh.herokuapp.com/api/upload",
+        data: formData,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleFileSelect = (event) => {
+    setSelectedFile(event.target.files[0]);
+    setModal(false);
   };
   const closeModal = () => {
     setModal(false);
   };
+
   return (
     <div className="modal">
-      <form onSubmit={submitForm}>
+      <form onSubmit={handleSubmit}>
         <CloseIcon className="close" onClick={closeModal} />
-
-        <label>Title</label>
-        <input type="text" />
-        <label>Description</label>
-        <input type="text" />
-
-        {/* <FileUploader
-          onFileSelectSuccess={(file) => setSelectedFile(file)}
-          onFileSelectError={({ error }) => alert(error)}
-        /> */}
-        <label className="custom-file-upload">
-          <input
-            type="file"
-            value={selectedFile}
-            onChange={(e) => setSelectedFile(e.target.files[0])}
-          />
-          Custom Upload
-        </label>
-
-        <button onClick={(e) => e.preventDefault()}>Add</button>
+        <input type="file" onChange={handleFileSelect} />
+        <input type="submit" value="Upload File" />
       </form>
     </div>
   );
