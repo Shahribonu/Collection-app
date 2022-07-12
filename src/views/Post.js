@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Avatar } from "@mui/material";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
@@ -6,7 +6,18 @@ import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import "./Post.css";
 
 export const Post = (ownPost) => {
-  // console.log(ownPost.ownPost.attributes.image);
+  const likes = ownPost.ownPost.attributes.like_count;
+  const dislikes = ownPost.ownPost.attributes.like_count;
+
+  const [like, setLike] = useState(likes);
+  const [dislike, setDislike] = useState(dislikes);
+
+  const Like = () => {
+    setLike(like + 1);
+  };
+  const Dislike = () => {
+    setDislike(dislike - 1);
+  };
   return (
     <div className="post">
       <div className="post__header">
@@ -27,9 +38,17 @@ export const Post = (ownPost) => {
           <p>{ownPost.ownPost.attributes.description}</p>
         </div>
         <div className="post__footer">
-          <ThumbUpOffAltIcon className="icons" fontSize="small" />
-          <ThumbDownOffAltIcon className="icons" fontSize="small" />
-          <ChatBubbleOutlineIcon className="icons" fontSize="small" />
+          <div className="likes" onClick={Like}>
+            <ThumbUpOffAltIcon className="icons" fontSize="small" />{" "}
+            <p>{likes}</p>
+          </div>
+          <div className="likes" onClick={Dislike}>
+            <ThumbDownOffAltIcon className="icons" fontSize="small" />
+            <p>{dislikes}</p>
+          </div>
+          <div>
+            <ChatBubbleOutlineIcon className="icons" fontSize="small" />
+          </div>
         </div>
       </div>
     </div>

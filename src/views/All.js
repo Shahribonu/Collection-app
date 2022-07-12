@@ -7,15 +7,12 @@ const All = () => {
 
   const getOwnPosts = () => {
     axios.get("https://collection-sh.herokuapp.com/api/posts").then((res) => {
-      // console.log(res.data.data);
       setOwnPosts(res.data.data);
     });
   };
   useEffect(() => {
     getOwnPosts();
   }, []);
-
-  // console.log(ownPosts[0].attributes.image.parenElement);
 
   return (
     <div className="all">

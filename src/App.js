@@ -9,7 +9,7 @@ import MainLayout from "./layouts/MainLayout";
 import UserLayout from "./layouts/UserLayout";
 import Login from "./authorization/Login";
 import EnteredLayout from "./layouts/EnteredLayout";
-// import Errors from "./components/404/Error";
+
 
 function App() {
   const token = localStorage.getItem("jwt");
@@ -17,7 +17,7 @@ function App() {
   const location = useLocation();
   const isUserLayoutRoute = whiteList.includes(location.pathname);
 
-  // return <Errors />;
+
 
   return (
     <>{isUserLayoutRoute && !token ? <UserLayout /> : <EnteredLayout />}</>

@@ -37,7 +37,7 @@ const Modal = ({ modal, setModal }) => {
           onFileSelectSuccess={(file) => setSelectedFile(file)}
           onFileSelectError={({ error }) => alert(error)}
         /> */}
-        <label class="custom-file-upload">
+        <label className="custom-file-upload">
           <input
             type="file"
             value={selectedFile}

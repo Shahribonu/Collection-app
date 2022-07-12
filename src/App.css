@@ -1,6 +1,6 @@
 body{
     --background-color: #fffcd9;
-    --main-color: #b93246;
+    --main-color: rgb(46, 46, 248);
 }
 .app{
     display: flex;

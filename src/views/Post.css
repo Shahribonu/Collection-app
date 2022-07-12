@@ -63,3 +63,12 @@ width: 650px;
     cursor: pointer;
     font-size: 25px !important;
 }
+
+.likes{
+    display: flex;
+    align-items:center;
+  justify-content: center;
+}
+.likes p{
+    margin-left: 20px;
+}

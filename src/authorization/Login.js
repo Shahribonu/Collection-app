@@ -12,6 +12,7 @@ function Login() {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   const getUser = () => {
     axios
       .get("https://collection-sh.herokuapp.com/api/users")
@@ -31,8 +32,8 @@ function Login() {
   };
 
   const errors = {
-    uname: "invalid username",
-    pass: "invalid password",
+    identifier: "invalid username",
+    password: "invalid password",
   };
 
   const handleSubmit = (event) => {

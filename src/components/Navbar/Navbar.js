@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import SearchIcon from "@mui/icons-material/Search";
 import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -19,6 +18,7 @@ export const Navbar = () => {
         <h1>Welcome</h1>
       </div>
       <div className="middle">
+        {}
         <button onClick={logOut}>Log out</button>
       </div>
 

@@ -1,15 +1,18 @@
 import { useState } from "react";
 import "./Register.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import MainLayout from "../layouts/MainLayout";
 
 export default function Register() {
   // States for registration
+  const [apiUsers, setApiUsers] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
@@ -33,19 +36,27 @@ export default function Register() {
     setSubmitted(false);
   };
 
+  const getUser = () => {
+    axios
+      .get("https://collection-sh.herokuapp.com/api/users")
+      .then((res) => setApiUsers(res.data));
+  };
+
   const postUser = () => {
     axios({
       method: "POST",
       url: "https://collection-sh.herokuapp.com/api/auth/local/register",
       data: {
+        email: `${email}`,
         username: `${name}`,
         password: `${password}`,
       },
+
       // headers: {
       //   Authorization: `
       //   Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU2MzMxNTc5LCJleHAiOjE2NTg5MjM1Nzl9.FCbFRPzqLGZMuPsqpqrdlI0B8sAGEgFboWdvPc7a7H8`,
       // },
-    }).then((res) => console.log(res.status));
+    }).then((res) => setApiUsers(res.data));
   };
 
   // Handling the form submission
@@ -57,6 +68,7 @@ export default function Register() {
       setSubmitted(true);
       setError(false);
       postUser();
+      navigate("/collection");
 
       //   <MainLayout />;
     }

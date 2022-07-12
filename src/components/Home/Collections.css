@@ -1,11 +1,11 @@
 .collections{
   width: 100%;
-  padding: 10px 25px;
+  /* padding: 10px 25px; */
   position: relative;
 
 }
 .collections h1{
-    display: flex;
+  display: flex;
   justify-content: center;
   margin: 0 0 40px;
   font-size: 25px;
