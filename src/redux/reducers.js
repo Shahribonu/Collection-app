@@ -1,0 +1,1 @@
+qalaysiz reduceni boshladizmi
